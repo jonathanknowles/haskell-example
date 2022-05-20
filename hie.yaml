@@ -1,0 +1,10 @@
+cradle:
+  cabal:
+    - path: "src/haskell-example"
+      component: "lib:haskell-example"
+
+    - path: "src/haskell-example-internal"
+      component: "haskell-example:lib:haskell-example-internal"
+
+    - path: "src/haskell-example-test"
+      component: "haskell-example:test:haskell-example-test"

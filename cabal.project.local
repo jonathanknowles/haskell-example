@@ -1,0 +1,7 @@
+ignore-project: False
+tests: True
+test-show-details: direct
+
+package *
+    documentation: True
+    ghc-options: -Wall -j

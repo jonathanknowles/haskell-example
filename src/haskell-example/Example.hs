@@ -10,6 +10,3 @@ foo = id
 
 bar :: String -> String
 bar = id
-
-baz :: Double -> Double
-baz = id

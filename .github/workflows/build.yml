@@ -51,11 +51,11 @@ jobs:
       - name: Configure
         run: >
           cabal configure
-              --enable-tests
-              --enable-benchmarks
-              --enable-documentation
-              --test-show-details=direct
-              --write-ghc-environment-files=always
+          --enable-tests
+          --enable-benchmarks
+          --enable-documentation
+          --test-show-details=direct
+          --write-ghc-environment-files=always
 
       - name: Freeze
         run: |
@@ -88,10 +88,10 @@ jobs:
       - name: Documentation
         run: >
           cabal haddock
-              --haddock-hyperlink-source
-              --haddock-quickjump
-              --haddock-html-location
-                  'https://hackage.haskell.org/package/$pkg-$version/docs'
+          --haddock-hyperlink-source
+          --haddock-quickjump
+          --haddock-html-location
+          'https://hackage.haskell.org/package/$pkg-$version/docs'
                   
           mv dist-newstyle/build/*/*/*/doc/html/* gh-pages
           

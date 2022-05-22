@@ -75,7 +75,7 @@ jobs:
           cabal test all
 
       - name: Documentation
-        if: matrix.ghc == '8.10.7'
+        if: matrix.ghc == '8.10.7' && github.ref == 'refs/heads/main'
         run: |
           cabal haddock \
               --haddock-hyperlink-source \
@@ -86,7 +86,7 @@ jobs:
           touch gh-pages/.nojekyll
 
       - name: Deploy
-        if: matrix.ghc == '8.10.7'
+        if: matrix.ghc == '8.10.7' && github.ref == 'refs/heads/main'
         uses: JamesIves/github-pages-deploy-action@v4.3.3
         with:
           branch: gh-pages

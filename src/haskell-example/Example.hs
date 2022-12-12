@@ -16,3 +16,7 @@ bar = id
 -- | Documentation for 'baz'.
 baz :: Double -> Double
 baz = id
+
+-- | Documentation for 'qux'.
+qux :: () -> ()
+qux = id

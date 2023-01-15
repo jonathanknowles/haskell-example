@@ -74,6 +74,7 @@ jobs:
           cabal build all
           --builddir=${{ env.cabal-build-dir }}
           --only-dependencies
+          --enable-documentation
 
       - name: Build
         run: >

@@ -81,6 +81,7 @@ jobs:
           --builddir=${{ env.cabal-build-dir }}
           --enable-tests
           --enable-benchmarks
+          --enable-documentation
 
       - name: Test
         run: >

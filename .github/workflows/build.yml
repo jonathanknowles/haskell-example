@@ -43,6 +43,11 @@ jobs:
         # the next build step to install ghc from scratch, with documentation.
         run: ghcup nuke || true
 
+      - name: Environment (Permission)
+        # https://github.com/actions/runner-images/issues/7061
+        if: matrix.os == 'ubuntu-latest'
+        run: sudo chown -R "runner" $GHCUP_INSTALL_BASE_PREFIX/.ghcup
+
       - name: Environment (Installation)
         uses: haskell/actions/setup@v2
         id: setup-haskell-cabal

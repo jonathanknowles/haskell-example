@@ -6,7 +6,7 @@ module Example where
 import Example.Internal ()
 
 -- | Documentation for 'foo'.
-foo :: Int -> Int
+foo :: Integer -> Integer
 foo = id
 
 -- | Documentation for 'bar'.

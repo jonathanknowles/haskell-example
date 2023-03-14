@@ -88,6 +88,12 @@ jobs:
           cabal test all
           --builddir=${{ env.cabal-build-dir }}
 
+      - name: Benchmark
+        run: >
+          cabal bench all
+          --builddir=${{ env.cabal-build-dir }}
+          || true
+
       - name: Documentation (Generation)
         run: >
           cabal haddock

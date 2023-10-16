@@ -108,7 +108,7 @@ jobs:
         if: |
             github.ref == 'refs/heads/main'
             && matrix.os == 'ubuntu-latest'
-            && matrix.ghc == '9.6.2'
+            && matrix.ghc == '9.8.1'
         run: >
           mv ${{ env.cabal-build-dir }}/build/*/*/*/doc/html/* gh-pages
 
@@ -118,7 +118,7 @@ jobs:
         if: |
             github.ref == 'refs/heads/main'
             && matrix.os == 'ubuntu-latest'
-            && matrix.ghc == '9.6.2'
+            && matrix.ghc == '9.8.1'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages

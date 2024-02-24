@@ -1,5 +1,5 @@
 -- |
--- Example documentation.
+-- Documentation for 'Example' module.
 --
 module Example where
 

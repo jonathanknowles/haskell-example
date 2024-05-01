@@ -71,6 +71,26 @@ jobs:
             ${{ steps.setup-haskell-cabal.outputs.cabal-store }}
             ${{ env.cabal-build-dir }}
 
+      - name: Tools
+        if: matrix.os == 'macOS-latest'
+        run: >
+          brew install llvm@13
+
+          export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
+
+          export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"
+
+          export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"
+
+          echo 'export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"'
+          >> /Users/runner/.bash_profile
+
+          echo 'export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"'
+          >> /Users/runner/.bash_profile
+
+          echo 'export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"'
+          >> /Users/runner/.bash_profile
+
       - name: Dependencies
         run: >
           cabal build all

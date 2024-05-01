@@ -22,7 +22,7 @@ jobs:
       matrix:
         os:
           - ubuntu-latest
-          - macOS-latest
+          - macOS-13
           - windows-latest
         cabal:
           - '3.10'

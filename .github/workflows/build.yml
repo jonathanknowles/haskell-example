@@ -39,13 +39,13 @@ jobs:
         run: >
 
           printf '%s\n' "$CPPFLAGS"
-              || echo "Not set"
+          || echo "Not set"
 
           printf '%s\n' "$LDFLAGS"
-              || echo "Not set"
+          || echo "Not set"
 
           which opt
-              || echo "Not installed"
+          || echo "Not installed"
 
           #brew install llvm@13
           #echo "CPPFLAGS=-I/opt/homebrew/opt/llvm@13/include" >> "${GITHUB_ENV}"

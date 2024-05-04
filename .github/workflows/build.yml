@@ -73,23 +73,19 @@ jobs:
 
       - name: Tools
         if: matrix.os == 'macOS-latest'
-        run: >
+        run: |
+          printf '%s\n' "$CPPFLAGS" || true
+          printf '%s\n' "$LDFLAGS" || true
+          which opt || true
+
           brew install llvm@13
+          echo "CPPFLAGS=-I/opt/homebrew/opt/llvm@13/include" >> "${GITHUB_ENV}"
+          echo "LDFLAGS=-L/opt/homebrew/opt/llvm@13/lib" >> "${GITHUB_ENV}"
+          echo opt/homebrew/opt/llvm@13/bin >> "${GITHUB_PATH}"
 
-          export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"
-
-          export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"
-
-          export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"
-
-          echo 'export PATH="/opt/homebrew/opt/llvm@13/bin:$PATH"'
-          >> /Users/runner/.bash_profile
-
-          echo 'export LDFLAGS="-L/opt/homebrew/opt/llvm@13/lib"'
-          >> /Users/runner/.bash_profile
-
-          echo 'export CPPFLAGS="-I/opt/homebrew/opt/llvm@13/include"'
-          >> /Users/runner/.bash_profile
+          printf '%s\n' "$CPPFLAGS" || true
+          printf '%s\n' "$LDFLAGS" || true
+          which opt || true
 
       - name: Dependencies
         run: >

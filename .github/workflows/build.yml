@@ -38,7 +38,9 @@ jobs:
         if: matrix.os == 'macOS-latest'
         run: |
           printf '%s\n' "$CPPFLAGS" || echo "Not set"
+
           printf '%s\n' "$LDFLAGS"  || echo "Not set"
+
           which opt                 || echo "Not installed"
 
           #brew install llvm@13

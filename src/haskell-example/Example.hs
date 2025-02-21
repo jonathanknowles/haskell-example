@@ -1,9 +1,20 @@
 -- |
 -- Documentation for 'Example' module.
 --
-module Example where
+module Example
+    ( -- * Functions defined in this module.
+      foo
+    , bar
+    , baz
+    , qux
+      -- * Functions defined in other modules, but re-exported by this module.
+    , internalFunction
+    )
+    where
 
-import Example.Internal ()
+import Example.Internal
+    ( internalFunction
+    )
 
 -- | Documentation for 'foo'.
 foo :: Integer -> Integer

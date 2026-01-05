@@ -1,5 +1,7 @@
 An example of a Haskell project with working continuous integration provided by GitHub Actions.
 
+<a href="http://jonathanknowles.net/haskell-example/"><img src="https://img.shields.io/badge/Example-API_Documentation-green" /></a>
+
 Features:
 
 - Support for multiple platforms (Linux, Windows, and MacOS).

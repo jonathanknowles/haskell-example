@@ -25,7 +25,7 @@ jobs:
           - macOS-latest
           - windows-latest
         cabal:
-          - '3.14'
+          - '3.16'
         ghc:
           - '8.10'
           - '9.0'
@@ -35,6 +35,7 @@ jobs:
           - '9.8'
           - '9.10'
           - '9.12'
+          - '9.14'
         exclude:
           # TODO: https://github.com/haskell-actions/setup/issues/77
           # To work around the above issue, we exclude the following versions:
@@ -117,7 +118,7 @@ jobs:
         if: |
             github.ref == 'refs/heads/main'
             && matrix.os == 'ubuntu-latest'
-            && matrix.ghc == '9.12'
+            && matrix.ghc == '9.14'
         run: >
           mv ${{ env.cabal-build-dir }}/build/*/*/*/doc/html/* gh-pages
 
@@ -127,7 +128,7 @@ jobs:
         if: |
             github.ref == 'refs/heads/main'
             && matrix.os == 'ubuntu-latest'
-            && matrix.ghc == '9.12'
+            && matrix.ghc == '9.14'
         uses: JamesIves/github-pages-deploy-action@v4
         with:
           branch: gh-pages
